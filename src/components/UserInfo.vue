@@ -10,30 +10,32 @@
         <h2>John Doe</h2>
         <p class="signature">“Stay hungry, stay foolish.”</p>
         <div class="social-links">
-          <a href="https://github.com/yourusername" target="_blank" title="GitHub">
+          <a href="https://github.com/zhaoty1021" target="_blank" title="个人">
+            <i class="fa-solid fa-circle-user"></i>
+          </a>
+          <a href="https://twitter.com/zhaoty1021" target="_blank" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://github.com/zhaoty1021" target="_blank" title="GitHub">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://juejin.cn/user/youruserid" target="_blank" title="掘金">
-            <i class="fab fa-juejin"></i>
-          </a>
-          <a href="https://space.bilibili.com/youruserid" target="_blank" title="Bilibili">
+          <a href="https://space.bilibili.com/283385619" target="_blank" title="Bilibili">
             <i class="fab fa-bilibili"></i>
           </a>
         </div>
       </div>
     </el-card>
-    <el-card class="music-player-card">
-      <h3>Music Player</h3>
-      <audio controls>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </el-card>
+    <MusicPlayer />
   </div>
 </template>
 
 <script>
+import MusicPlayer from './MusicPlayer.vue'
+
 export default {
+  components: {
+    MusicPlayer
+  }
 }
 </script>
 
@@ -81,20 +83,5 @@ export default {
 
 .social-links a:hover {
   color: #42b983;
-}
-
-.music-player-card {
-  width: 300px;
-  margin: 20px auto;
-  text-align: center;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-}
-
-audio {
-  width: 100%;
-  margin-top: 10px;
 }
 </style>

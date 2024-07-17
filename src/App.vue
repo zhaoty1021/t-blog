@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navbar />
+    <Navbar1 />
     <div class="main-content">
       <el-row>
         <el-col :span="6">
@@ -21,13 +21,13 @@
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue'
+import Navbar1 from './components/Navbar.vue'
 import UserInfo from './components/UserInfo.vue'
 import ArticlePreview from './components/ArticlePreview.vue'
 
 export default {
   components: {
-    Navbar,
+    Navbar1,
     UserInfo,
     ArticlePreview
   },
