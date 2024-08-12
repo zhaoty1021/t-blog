@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+  }
+  
+  .el-header {
+    background-color: #409eff;
+    color: #fff;
+  }
+  
+  .el-main {
+    padding: 20px;
+  }
+  
+  .el-aside {
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
