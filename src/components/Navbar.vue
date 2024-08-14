@@ -49,9 +49,17 @@
           </el-sub-menu>
         </el-menu>
       </el-main>
-      <div width="150px" class="user-profile">
-        <el-avatar src="https://i.pravatar.cc/300" />
-        <span class="username">John Doe</span>
+      <div class="user-profile">
+            <div>
+              <el-tooltip
+                  class="box-item"
+                  effect="light"
+                  content="点击去登录"
+                  placement="right"
+              >
+                <el-avatar style="margin-right: 3rem">登录</el-avatar>
+              </el-tooltip>
+            </div>
       </div>
     </el-container>
   </el-header>
