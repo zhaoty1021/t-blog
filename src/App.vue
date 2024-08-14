@@ -1,14 +1,12 @@
 <template>
-  <div id="app">
-    <NavBar />
-    <div class="page-content">
+<div id="app">
+    <div>
       <router-view />
     </div>
   </div>
 </template>
-
 <script setup>
-import NavBar from './components/Navbar.vue';
+
 </script>
 
 <style>
@@ -20,8 +18,5 @@ import NavBar from './components/Navbar.vue';
   color: #0e76df;
 }
 
-/* 这里的样式确保页面内容不会被导航栏遮挡 */
-.page-content {
-  padding-top: 80px; /* 与导航栏的高度保持一致 */
-}
+
 </style>

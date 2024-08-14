@@ -1,23 +1,16 @@
 <template>
   <el-header height="70px" class="navbar">
-    <el-tooltip
-              class="box-item"
-              effect="light"
-              content="点击回到首页"
-              placement="bottom"
-          >
-            <el-link href="/">
-              <!--              <el-image class="logo" src="https://element-plus.org/images/element-plus-logo.svg"/>-->
-              <div style="color: white;font-size: 1rem;font-weight: bold;margin-left: 0.2rem">
-                Tyrone's Blog
-              </div>
-            </el-link>
-          </el-tooltip>
+    <div class="user-profile">
+        <button class="button" data-text="Awesome">
+          <span class="actual-text">&nbsp;TBlog&nbsp;</span>
+          <span aria-hidden="true" class="hover-text">&nbsp;TBlog&nbsp;</span>
+        </button>
+      </div>
     <el-container>
       
       <el-main>
-        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-          <el-menu-item index="1">
+        <el-menu router :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+          <el-menu-item index="/home">
             <el-icon><HomeFilled /></el-icon>
             <span>主页</span>
           </el-menu-item>
@@ -25,24 +18,24 @@
             <el-icon><ProfileFilled /></el-icon>
             <span>文章</span>
           </el-menu-item>
-          <el-menu-item index="3">
+          <el-menu-item index="/category">
             <el-icon><DashboardFilled /></el-icon>
             <span>分类</span>
           </el-menu-item>
-          <el-menu-item index="5">
+          <el-menu-item index="4">
             <el-icon><TagsFilled/></el-icon>
             <span>标签</span>
           </el-menu-item>
-          <el-menu-item index="4">
+          <el-menu-item index="5">
             <el-icon><IdcardFilled /></el-icon>
             <span>关于</span>
           </el-menu-item>
-          <el-sub-menu index="2">
+          <el-sub-menu index="6">
             <template #title>
               <el-icon><AppstoreFilled /></el-icon>
-              <span>其他</span>
+              <span>更多</span>
             </template>
-            <el-menu-item index="2-1">
+            <el-menu-item index="6-1">
               <el-icon><PictureFilled /></el-icon>
               <span>相册</span>
             </el-menu-item>
@@ -50,25 +43,21 @@
         </el-menu>
       </el-main>
       <div class="user-profile">
-            <div>
-              <el-tooltip
-                  class="box-item"
-                  effect="light"
-                  content="点击去登录"
-                  placement="right"
-              >
-                <el-avatar style="margin-right: 3rem">登录</el-avatar>
-              </el-tooltip>
-            </div>
+        <button class="button" data-text="Awesome">
+          <span class="actual-text">&nbsp;LOGIN&nbsp;</span>
+          <span aria-hidden="true" class="hover-text">&nbsp;LOGIN&nbsp;</span>
+        </button>
       </div>
     </el-container>
   </el-header>
+  <router-view></router-view>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import { ElMessage } from 'element-plus';
 import 'element-plus/es/components/message/style/css';
+import router from "@/router/router.ts"
 import {
   HomeFilled,
   ProfileFilled,
@@ -87,6 +76,7 @@ const handleSelect = (key, keyPath) => {
     type: 'success',
   });
 };
+
 </script>
 
 <style scoped>
@@ -156,5 +146,49 @@ const handleSelect = (key, keyPath) => {
 /* 为页面内容增加顶部间距，以避免内容被导航栏遮挡 */
 .page-content {
   padding-top: 80px;
+}
+
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #ffffff;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
 }
 </style>
