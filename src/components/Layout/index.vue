@@ -2,10 +2,12 @@
   <div class="parent">
     <LayoutHeader/>
   </div>
+  
   </template>
   
   <script setup>
   import LayoutHeader from "./Header/index.vue";
+  import SideBar from "./SideBar/SideBar.vue";
   
   </script>
   

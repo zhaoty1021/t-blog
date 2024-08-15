@@ -1,17 +1,15 @@
 <template>
   <div class="page-content">
-    <BlogPost
-      v-for="(post, index) in blogPosts"
-      :key="index"
-      :title="post.title"
-      :summary="post.summary"
-    />
+  
   </div>
+  <SideBar />
+  
 </template>
 
 <script setup>
 import { useMainStore } from '../store';
 import BlogPost from '../components/BlogPost.vue';
+import SideBar from '@/components/Layout/SideBar/SideBar.vue';
 const store = useMainStore();
 const blogPosts = store.blogPosts;
 

@@ -80,16 +80,14 @@ const handleSelect = (key, keyPath) => {
 </script>
 
 <style scoped>
-:root {
-  --el-menu-text-color: #fbfeff;
-}
+
 .navbar {
-  background-color: #3b044b;
+  background-color: #000000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  color: #ecf0f1;
+  color: #0ff;
   position: fixed; /* 固定在页面顶部 */
   width: 100%;
   z-index: 1000; /* 确保导航栏在其他内容之上 */
@@ -101,34 +99,42 @@ const handleSelect = (key, keyPath) => {
 }
 
 .el-menu-demo {
-  --el-menu-text-color: #fbfeff;
+  
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
+  --el-menu-text-color: #0ff;
   background-color: transparent;
   border-bottom: none;
   display: flex;
   align-items: center;
 }
 .el-sub-menu{
-  color: #ecf0f1;
+  color: #0ff;
   font-size: 16px;
   padding: 0 10px;
 }
 
 .el-menu-demo .el-menu-item {
-  color: #feffff;
+  color: #0ff;
   font-size: 16px;
   padding: 0 20px;
 }
 
 
-.el-sub-menu.is-opened,
-.el-sub-menu.is-active {
-  background: rgba(246, 248, 249, 0.2);
-  border-radius: 7px;
-}
+
 .el-menu-demo .el-menu-item:hover,
 .el-menu-demo .el-menu-item.is-active {
-  background: rgba(246, 248, 249, 0.2);
-  border-radius: 7px;
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
 }
 
 
@@ -162,7 +168,7 @@ const handleSelect = (key, keyPath) => {
 .button {
   --border-right: 6px;
   --text-stroke-color: rgba(255,255,255,0.6);
-  --animation-color: #ffffff;
+  --animation-color: #0ff;
   --fs-size: 2em;
   letter-spacing: 3px;
   text-decoration: none;
