@@ -2,7 +2,7 @@
    <div :class="['card', { 'active-about': activeTab=== 'about' }, { 'active-experience': activeTab=== 'experience' }, { 'active-contact': activeTab=== 'contact' }]">
   <div class="card-header">
     <div class="card-cover" style="background-image:url('/src/assets/picture.png');"></div>
-    <img class="card-avatar" src="/Users/zhaotianyu3/Documents/front-projects/tblog-front/t-blog/src/assets/picture.png" alt="Avatar">" alt="avatar" />
+    <img class="card-avatar" src="/src/assets/picture.png" alt="Avatar">" alt="avatar" />
     <h1 class="card-fullname">Tyrone Chiao</h1>
     <h2 class="card-jobtitle">软件开发</h2>
   </div>
@@ -10,8 +10,8 @@
     <div class="card-section" v-show="activeTab === 'about'">
       <div class="card-content">
         <div class="card-subtitle">ABOUT</div>
-        <p class="card-desc">Whatever tattooed stumptown art party sriracha gentrify hashtag intelligentsia readymade schlitz brooklyn disrupt.
-        </p>
+        <p class="card-desc">萤小宇</p>
+        <p class="card-desc">前端，后端，技术宅</p>
       </div>
       <div class="card-social">
         <a href="https://github.com/zhaoty1021"><GithubFilled class="icon-item"/></a>
@@ -22,13 +22,13 @@
         <div class="card-subtitle">WORK EXPERIENCE</div>
         <div class="card-timeline">
           
-          <div class="card-item" data-year="2018">
-            <div class="card-item-title">Illustrator at <span>Google</span></div>
-            <div class="card-item-desc">Onboarding illustrations for App.</div>
+          <div class="card-item" data-year="2017">
+            <div class="card-item-title">吉林大学</div>
+            <div class="card-item-desc">计算机科学与技术</div>
           </div>
-          <div class="card-item" data-year="2020">
-            <div class="card-item-title">Full-Stack Developer at <span>CodePen</span></div>
-            <div class="card-item-desc">Responsible for the encomposing brand expreience.</div>
+          <div class="card-item" data-year="2021">
+            <div class="card-item-title">北京邮电大学</div>
+            <div class="card-item-desc">计算机科学与技术</div>
           </div>
         </div>
       </div>
@@ -38,19 +38,18 @@
         <div class="card-subtitle">CONTACT</div>
         <div class="card-contact-wrapper">
           <div class="card-contact">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-              <circle cx="12" cy="10" r="3" /></svg>
-            Algonquin Rd, Three Oaks Vintage, MI, 49128
+            <EnvironmentFilled class="icon-contact"/>
+            <span style="font-size: 15px;">北京，顺义</span>
           </div>
-          <div class="card-contact"></div>
           <div class="card-contact">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-              <path d="M22 6l-10 7L2 6" /></svg>
-            william@rocheald.com
+            <QqSquareFilled class="icon-contact"/>
+            <span style="font-size: 15px;">1025338403</span>
           </div>
-          <button class="contact-me">WORK TOGETHER</button>
+          <div class="card-contact">
+            <MailFilled class="icon-contact"/>
+            <span style="font-size: 15px;">zhaoty1021@outlook.com</span>
+          </div>
+          <button class="contact-me">CONTACT ME</button>
         </div>
       </div>
     </div>
@@ -63,7 +62,12 @@
 </div>
 </template>
 <script setup lang="js">
-import { GithubFilled } from '@ant-design/icons-vue';
+import { 
+    GithubFilled,
+    EnvironmentFilled,
+    MailFilled,
+    QqSquareFilled
+    } from '@ant-design/icons-vue';
 import { ref } from 'vue';
 const activeTab = ref('about'); // 默认显示 "关于" 部分
 
@@ -114,12 +118,17 @@ body {
 }
 
 .card.active-experience {
-  height: 600px;
-  
+  height: 500px;
+  .card-main {
+    padding-top: 0;
+  }
 }
 
 .card.active-contact {
   height: 550px;
+  .card-main {
+    padding-top: 0;
+  }
 }
 
 .card.is-active {
@@ -410,37 +419,32 @@ body {
 .card-contact {
   display: flex;
   align-items: center;
-  font-size: 13px;
+  font-size: 15px;
   color: #e0e0e0;
   font-family: "DM Sans", sans-serif;
-  line-height: 1.6;
+  line-height: 2;
   cursor: pointer;
 
   & + & {
     margin-top: 16px;
   }
 
-  svg {
-    flex-shrink: 0;
-    width: 30px;
-    min-height: 34px;
-    margin-right: 12px;
-    transition: 0.3s;
-    padding-right: 12px;
-    border-right: 1px solid #dfe2ec;
-  }
 }
 
+
+
 .contact-me {
-  border: 0;
-  outline: none;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
   background: linear-gradient(
     to right,
     rgba(83, 200, 239, 0.8) 0%,
     rgba(81, 106, 204, 0.8) 96%
   );
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-  color: #fff;
+  cursor: pointer;
+  color: #ffffff;
   padding: 12px 16px;
   width: 100%;
   border-radius: 5px;
@@ -452,8 +456,40 @@ body {
   transition: 0.3s;
 }
 
+button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 1px solid #70bdca;
+  box-shadow: 4px 5px 17px -4px #268391;
+}
+
+button::before {
+  content: "";
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #2c9caf;
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+button:hover::before {
+  width: 150%;
+}
+
 .icon-item{
   font-size: 30px;
   color: #0ff;
+}
+.icon-contact{
+  font-size: 20px;
+  flex-shrink: 0;
+    width: 30px;
+    min-height: 20px;
+    margin-right: 12px;
+    transition: 0.3s;
+    padding-right: 12px;
+    border-right: 1px solid #dfe2ec;
 }
 </style>

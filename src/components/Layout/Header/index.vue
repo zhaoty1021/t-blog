@@ -41,7 +41,9 @@
             </el-menu-item>
           </el-sub-menu>
         </el-menu>
+       
       </el-main>
+      
       <div class="user-profile">
         <button class="button" data-text="Awesome">
           <span class="actual-text">&nbsp;LOGIN&nbsp;</span>
@@ -100,20 +102,14 @@ const handleSelect = (key, keyPath) => {
 
 .el-menu-demo {
   
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #fff,
-    0 0 40px #0ff,
-    0 0 80px #0ff,
-    0 0 90px #0ff,
-    0 0 100px #0ff,
-    0 0 150px #0ff;
+
   --el-menu-text-color: #0ff;
   background-color: transparent;
   border-bottom: none;
   display: flex;
   align-items: center;
+  
+  
 }
 .el-sub-menu{
   color: #0ff;
@@ -131,11 +127,23 @@ const handleSelect = (key, keyPath) => {
 
 .el-menu-demo .el-menu-item:hover,
 .el-menu-demo .el-menu-item.is-active {
+  color: #ffffff;
+  transform: scale(1.1);
   box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
               -4px -4px 6px 0 rgba(116, 125, 136, .5), 
     inset -4px -4px 6px 0 rgba(255,255,255,.2),
     inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+    
 }
+
+
+
+.el-menu-demo .el-menu-item:hover::before,
+.el-menu-demo .el-menu-item.is-active::before {
+  
+  width: 300%;
+}
+
 
 
 .user-profile {
