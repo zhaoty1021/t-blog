@@ -93,6 +93,10 @@ const handleSelect = (key, keyPath) => {
   position: fixed; /* 固定在页面顶部 */
   width: 100%;
   z-index: 1000; /* 确保导航栏在其他内容之上 */
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
 }
 
 
@@ -106,6 +110,10 @@ const handleSelect = (key, keyPath) => {
   --el-menu-text-color: #0ff;
   background-color: transparent;
   border-bottom: none;
+  padding: 0;
+  margin: 0;
+  height: 70px;
+  line-height: 0px;
   display: flex;
   align-items: center;
   

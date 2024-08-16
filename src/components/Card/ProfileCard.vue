@@ -2,7 +2,7 @@
    <div :class="['card', { 'active-about': activeTab=== 'about' }, { 'active-experience': activeTab=== 'experience' }, { 'active-contact': activeTab=== 'contact' }]">
   <div class="card-header">
     <div class="card-cover" style="background-image:url('/src/assets/picture.png');"></div>
-    <img class="card-avatar" src="/src/assets/picture.png" alt="Avatar">" alt="avatar" />
+    <img class="card-avatar" src="/src/assets/picture.png" alt="Avatar" />
     <h1 class="card-fullname">Tyrone Chiao</h1>
     <h2 class="card-jobtitle">软件开发</h2>
   </div>
@@ -107,7 +107,7 @@ body {
   transition: 0.3s;
   flex-direction: column;
   border-radius: 10px;
-  box-shadow: 0 0 0 8px rgb(7, 7, 7);
+  box-shadow:rgb(255, 255, 255) 0px 0px 5px; 
 }
 
 .card.active-about {
@@ -456,14 +456,14 @@ body {
   transition: 0.3s;
 }
 
-button:hover {
+.contact-me:hover {
   color: #ffffff;
   transform: scale(1.1);
   outline: 1px solid #70bdca;
   box-shadow: 4px 5px 17px -4px #268391;
 }
 
-button::before {
+.contact-me::before {
   content: "";
   left: -50px;
   top: 0;
@@ -474,7 +474,7 @@ button::before {
   transition: width 1000ms;
 }
 
-button:hover::before {
+.contact-me:hover::before {
   width: 150%;
 }
 
