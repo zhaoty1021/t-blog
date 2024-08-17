@@ -3,6 +3,11 @@
     <div>
       <div class="statistics">
         <ProfileCard/>
+        <TagCard/>
+      <div>
+        
+      </div>
+        
       </div>
       
     </div>
@@ -10,7 +15,7 @@
   
   <script setup lang="ts">
   import ProfileCard from '@/components/Card/ProfileCard.vue'
-  
+  import TagCard from '@/components/Card/TagCard.vue';
   </script>
   
   <style scoped>
@@ -18,14 +23,16 @@
   .statistics {
     display: flex;
     flex-direction: column;
-    color: $menuActiveText;
+
   
     div {
-      margin: 5px 20px;
+      margin: 10px 30px;
       font-size: 14px;
       display: flex;
       justify-content: space-between;
     }
+  
+    
   }
   
   </style>

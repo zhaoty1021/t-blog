@@ -110,6 +110,7 @@ body {
   box-shadow:rgb(255, 255, 255) 0px 0px 5px; 
 }
 
+
 .card.active-about {
   height: 450px;
   .card-main {
