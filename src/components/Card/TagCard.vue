@@ -1,6 +1,19 @@
 <template>
   <div class="card">
-     <span>Tags</span>
+    <span class="title">All tags</span>
+  <div class="card__tags">
+    <ul class="tag">
+      <li class="tag__name">JS</li>
+      <li class="tag__name">wordpress</li>
+      <li class="tag__name">uiverse</li>
+      <li class="tag__name">Css</li>
+      <li class="tag__name">html</li>
+      <li class="tag__name">go</li>
+      <li class="tag__name">java</li>
+      <li class="tag__name">ux/ui</li>
+      <li class="tag__name">figma</li>
+    </ul>
+  </div>
   </div>
 </template>
 
@@ -73,5 +86,50 @@ const handleTagClick = (tag) => {
 .card:after {
   filter: blur(100px);
 }
+
+.title {
+  font-weight: 900;
+  font-size: 1.7em;
+}
+
+.tag__name {
+  display: inline-block;
+  color: #0a0000;
+  font-size: 12px;
+  background-color: #0ff;
+  padding: 6px 23px 9px;
+  border-radius: 70em;
+  margin: 8px 6px 8px 0;
+  margin-left: 0px;
+  position: relative;
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.tag__name::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #000000;
+}
+
+.tag__name::before {
+  left: 7px;
+}
+
+.tag__name::after {
+  right: 7px;
+}
+
+.tag__name:hover {
+  transform: scale(1.1);
+  background-color: #303498;
+}
+
 
 </style>
