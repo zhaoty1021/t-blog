@@ -102,12 +102,27 @@ body {
   z-index: 1;
   overflow-x: hidden;
   background-color: rgb(8, 8, 8);
+  background: linear-gradient(45deg, rgb(1, 20, 20),rgb(24, 1, 1),  #1100ff,#00c8ff, #04efeb);
   color: #0ff;
   display: flex;
   transition: 0.3s;
   flex-direction: column;
   border-radius: 10px;
-  box-shadow:rgb(255, 255, 255) 0px 0px 5px; 
+  box-shadow:rgb(255, 255, 255) 0px 0px 20px; 
+  animation: steam 20s linear infinite;
+}
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
 }
 
 
